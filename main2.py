@@ -92,7 +92,8 @@ def main():
 
     db = Database(engineers_csv, tickets_csv)
     # Set your OpenAI API key here
-    load_dotenv('../.env')
+    if os.getenv('HOSTNAME') == 'E-5CG24202NG':
+      load_dotenv('../.env')
     openai_api_key = os.getenv('OPENAI_API_KEY')
     agent = OpenAIAgent(openai_api_key)
     
