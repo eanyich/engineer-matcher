@@ -3,6 +3,7 @@ from typing import List, Tuple, Dict, Union
 import pandas as pd
 from models import Engineer
 from tqdm import tqdm
+import re
 
 class OpenAIAgent:
     def __init__(self, api_key):
@@ -26,7 +27,8 @@ class OpenAIAgent:
                 {"role": "system", "content": "You are a highly discerning assistant, "
                                               "aiming for precise and accurate skill matching."},
                 {"role": "user", "content": (f"Please analyze the following problem description and skillsets, "
-                                               f"and provide a matching score in percentage with 2 decimal places "
+                                               f"and provide a matching score 1. in percentage with 1 decimal places "
+                                               f"2. only in format of '[0-9][0-9][.][0-9]%' and without any extra text or space"
                                                f"based on relevance and applicability. Do use 0.0 if skillsets doesn't match!"
                                                f"take advantage of full scales from 0-100, and remember what skillsets you"
                                                f"have scored. If skillsets are the same regardless of text format, give same score."
