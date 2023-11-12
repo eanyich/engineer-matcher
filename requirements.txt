@@ -1,0 +1,8 @@
+pandas
+streamlit
+matplotlib
+python-dotenv
+pydantic
+pydantic[email]
+openai
+tqdm
