@@ -4,5 +4,5 @@ matplotlib
 python-dotenv
 pydantic
 pydantic[email]
-openai
+openai==0.28.1
 tqdm
